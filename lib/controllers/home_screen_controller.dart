@@ -1,10 +1,11 @@
-import 'package:elvinci_demo/model/product_model.dart';
-import 'package:elvinci_demo/view/cart_screen.dart';
-import 'package:elvinci_demo/view/helper_functions/assets.dart';
+import 'package:elvinci_demo/views/cart_screen.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../view/overview_screen.dart';
+import '../models/product_model.dart';
+import '../views/constants/assets.dart';
+import '../views/overview_screen.dart';
 
 class HomeScreenController extends GetxController{
 

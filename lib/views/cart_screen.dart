@@ -1,11 +1,12 @@
-import 'package:elvinci_demo/view/custom_widgets/custom_product_card.dart';
+import 'package:elvinci_demo/views/custom_widgets/custom_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../controller/home_screen_controller.dart';
+import '../controllers/home_screen_controller.dart';
+import 'constants/colors.dart';
 import 'custom_widgets/custom_header_cell.dart';
 import 'custom_widgets/custom_no_product_in_cart_widget.dart';
-import 'helper_functions/colors.dart';
+
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

@@ -1,12 +1,13 @@
-import 'package:elvinci_demo/controller/home_screen_controller.dart';
-import 'package:elvinci_demo/model/product_model.dart';
-import 'package:elvinci_demo/view/custom_widgets/custom_add_to_cart_button.dart';
-import 'package:elvinci_demo/view/custom_widgets/custom_set_count_of_product.dart';
-import 'package:elvinci_demo/view/helper_functions/colors.dart';
+import 'package:elvinci_demo/controllers/home_screen_controller.dart';
+import 'package:elvinci_demo/views/custom_widgets/custom_add_to_cart_button.dart';
+import 'package:elvinci_demo/views/custom_widgets/custom_set_count_of_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '../../models/product_model.dart';
+import '../constants/colors.dart';
 
 class ProductCard extends StatelessWidget {
 
@@ -18,7 +19,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220.h,
+      height: 222.h,
       margin: EdgeInsets.only(bottom: 20.h),
       decoration: const BoxDecoration(
           color: MyColors.whiteColor,

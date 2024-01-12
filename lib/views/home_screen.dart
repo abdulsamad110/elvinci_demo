@@ -1,8 +1,8 @@
-import 'package:elvinci_demo/view/helper_functions/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../controller/home_screen_controller.dart';
+import '../controllers/home_screen_controller.dart';
+import 'constants/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,14 +47,14 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               backgroundColor: Colors.white,
-              icon: const Icon(Icons.home),
+              icon: Icon(Icons.home, size: 30.r,),
               label: homeScreenController.currentIndex.value == 0
                   ? "Overview"
                   : "",
             ),
             BottomNavigationBarItem(
                 backgroundColor: Colors.white,
-                icon: const Icon(Icons.shopping_cart),
+                icon: Icon(Icons.shopping_cart, size: 30.r,),
                 label: homeScreenController.currentIndex.value == 1
                     ? "Cart"
                     : ""),

@@ -1,10 +1,10 @@
-import 'package:elvinci_demo/controller/home_screen_controller.dart';
+import 'package:elvinci_demo/controllers/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'constants/colors.dart';
 import 'custom_widgets/custom_product_card.dart';
-import 'helper_functions/colors.dart';
 
 class OverviewScreen extends StatelessWidget {
   const OverviewScreen({super.key});

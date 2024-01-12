@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../helper_functions/colors.dart';
+import '../constants/colors.dart';
 
 
 class HeaderCell extends StatelessWidget {

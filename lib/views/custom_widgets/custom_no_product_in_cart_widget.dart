@@ -1,8 +1,9 @@
-import 'package:elvinci_demo/view/helper_functions/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../helper_functions/colors.dart';
+
+import '../constants/assets.dart';
+import '../constants/colors.dart';
 
 Widget noProductInCartWidget(){
   return Container(

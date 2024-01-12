@@ -1,8 +1,9 @@
-import 'package:elvinci_demo/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../helper_functions/colors.dart';
+import '../../models/product_model.dart';
+import '../constants/colors.dart';
+
 
 Widget setCountOfProduct(ProductModel product, Function onTapPlus, Function onTapDelete){
   return Container(
