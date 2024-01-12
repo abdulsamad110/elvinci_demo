@@ -1,6 +1,7 @@
 import 'package:elvinci_demo/model/product_model.dart';
 import 'package:elvinci_demo/view/cart_screen.dart';
 import 'package:elvinci_demo/view/helper_functions/assets.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../view/overview_screen.dart';
@@ -32,6 +33,7 @@ class HomeScreenController extends GetxController{
   }
 
   void addToCart(ProductModel product){
+    showToastMessage("Item has been added to cart");
     bool isProductInCart = false;
     for(ProductModel cartProduct in productsInCart){
       if (cartProduct.id == product.id){
@@ -48,6 +50,32 @@ class HomeScreenController extends GetxController{
       totalPrice += product.price;
     }
     update();
+  }
+
+  void deleteFromCart(ProductModel product){
+    showToastMessage("Item has been removed from cart");
+    if(product.count > 1){
+      for(ProductModel cartProduct in productsInCart){
+        if (cartProduct.id == product.id){
+          cartProduct.count--;
+          totalCount--;
+          totalPrice -= product.price;
+          break;
+        }
+      }
+    }
+    else {
+      productsInCart.remove(product);
+      totalCount--;
+      totalPrice -= product.price;
+    }
+    update();
+  }
+
+  void showToastMessage(String message){
+    Fluttertoast.showToast(
+      msg: message,
+    );
   }
 
 }

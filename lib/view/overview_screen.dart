@@ -33,7 +33,7 @@ class OverviewScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
             itemCount: homeScreenController.productList.length,
             itemBuilder: (context, index) {
-              return ProductCard(homeScreenController.productList[index]);
+              return ProductCard(homeScreenController.productList[index], false);
             },
           ),
         );

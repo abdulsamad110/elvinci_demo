@@ -1,6 +1,7 @@
 import 'package:elvinci_demo/controller/home_screen_controller.dart';
 import 'package:elvinci_demo/model/product_model.dart';
 import 'package:elvinci_demo/view/custom_widgets/custom_add_to_cart_button.dart';
+import 'package:elvinci_demo/view/custom_widgets/custom_set_count_of_product.dart';
 import 'package:elvinci_demo/view/helper_functions/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -10,7 +11,8 @@ import 'package:get/get.dart';
 class ProductCard extends StatelessWidget {
 
   ProductModel productModel;
-  ProductCard(this.productModel, {super.key});
+  bool inCart;
+  ProductCard(this.productModel, this.inCart, {super.key});
   HomeScreenController controller = Get.put(HomeScreenController());
 
   @override
@@ -94,15 +96,30 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: InkWell(
-                      onTap: () {
-                        controller.addToCart(productModel);
-                      },
+                  if(!inCart)
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: InkWell(
+                        onTap: () {
+                          controller.addToCart(productModel);
+
+                        },
                         child: addToCartButton(),
+                      ),
                     ),
-                  ),
+                  if(inCart)
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: setCountOfProduct(
+                          productModel,
+                          () {
+                            controller.addToCart(productModel);
+                          },
+                          () {
+                            controller.deleteFromCart(productModel);
+                          }
+                      ),
+                    ),
                 ],
               ),
             ),

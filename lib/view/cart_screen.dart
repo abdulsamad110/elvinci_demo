@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../controller/home_screen_controller.dart';
 import 'custom_widgets/custom_header_cell.dart';
+import 'custom_widgets/custom_no_product_in_cart_widget.dart';
 import 'helper_functions/colors.dart';
 
 class CartScreen extends StatelessWidget {
@@ -53,7 +54,7 @@ class CartScreen extends StatelessWidget {
                                     children: [
                                       Expanded(
                                         child: HeaderCell(
-                                          title: "${homeController.totalPrice} €",
+                                          title: "${homeController.totalPrice.toStringAsFixed(2)} €",
                                           headerColor: MyColors.lightGreyColor,
                                           titleColor: MyColors.blackColor,
                                           hasBalance: true,
@@ -64,7 +65,7 @@ class CartScreen extends StatelessWidget {
                                       ),
                                       Expanded(
                                         child: HeaderCell(
-                                          title: "${homeController.totalCount}",
+                                          title: homeController.totalCount.toStringAsFixed(0),
                                           headerColor: MyColors.darkBlueColor,
                                           titleColor: Colors.white,
                                           hasBalance: false,
@@ -76,22 +77,20 @@ class CartScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          // Expanded(
-                          //   child: ListView.builder(
-                          //       reverse: false,
-                          //       padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
-                          //       shrinkWrap: true,
-                          //       itemCount: homeController.userModel.productsInCart?.length,
-                          //       itemBuilder: (context, index) {
-                          //         return InkWell(
-                          //           onTap: () {
-                          //
-                          //           },
-                          //           child: ProductCard(homeController.userModel.productsInCart![index]),
-                          //         );
-                          //       },
-                          //     ),
-                          // ),
+                          if(homeController.productsInCart.isNotEmpty)
+                            Expanded(
+                              child: ListView.builder(
+                                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+                                itemCount: homeController.productsInCart.length,
+                                itemBuilder: (context, index) {
+                                  return ProductCard(homeController.productsInCart[index], true);
+                                },
+                              ),
+                            ),
+                          if(homeController.productsInCart.isEmpty)
+                            Expanded(
+                              child: noProductInCartWidget(),
+                            ),
                         ],
                     ),
                   ),
