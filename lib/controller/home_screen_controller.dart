@@ -20,7 +20,7 @@ class HomeScreenController extends GetxController{
     ProductModel(id: 2, image: MyAssets.microwaveImage, title: "Samsung Microwave", price: 72, count: 1, description: "Elevate your kitchen with the Samsung fridge, a perfect blend of style and innovation. Experience advanced cooling technology and spacious design for freshness that lasts", rating: 4.5),
     ProductModel(id: 3, image: MyAssets.tvImage, title: "Samsung TV", price: 218, count: 1, description: "Efficiency meets innovation with the Samsung dryer machine. Enjoy quick and thorough drying performance coupled with smart features, making laundry a breeze", rating: 4),
     ProductModel(id: 4, image: MyAssets.washingMachineImage, title: "LG Washing Machine", price: 558, count: 1, description: "Elevate your kitchen with the Samsung fridge, a perfect blend of style and innovation. Experience advanced cooling technology and spacious design for freshness that lasts", rating: 2),
-    ProductModel(id: 5, image: MyAssets.dryerImage, title: "Samsung Dryer Machine", price: 458, count: 1, description: "Efficiency meets innovation with the Samsung dryer machine. Enjoy quick and thorough drying performance coupled with smart features, making laundry a breeze", rating: 3),
+    ProductModel(id: 5, image: MyAssets.dryerImage, title: "LG Dryer Machine", price: 458, count: 1, description: "Efficiency meets innovation with the Samsung dryer machine. Enjoy quick and thorough drying performance coupled with smart features, making laundry a breeze", rating: 3),
   ];
 
   List<Widget> pages = [
